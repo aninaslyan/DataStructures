@@ -1,0 +1,122 @@
+table {
+    font-family: arial, sans-serif;
+    border-collapse: collapse;
+    width: 100%;
+}
+
+td, th {
+    border: 1px solid #ddd;
+    text-align: left;
+    padding: 8px;
+}
+
+tr{
+    background-color: #a0ad6e;
+}
+
+th{
+    text-align: center;
+}
+
+.tableHeaderTr {
+    background-color: #77863d;
+    color: wheat;
+}
+
+tr:nth-child(even) {
+    background-color: #ddd;
+}
+
+.tableFixHead    { overflow-y: auto; height: 300px;}
+.tableFixHead th { position: sticky; top: 0; }
+
+/* Just common table stuff. Really. */
+table  { border-collapse: collapse; width: 100%; }
+th, td { padding: 8px 16px; }
+th     { background:#eee; }
+
+#leftControls{
+    display: -webkit-box;
+    padding: 12px 1px 1px 11px;
+    margin-bottom: 0;
+}
+
+#rightControls{
+    float: right;
+    margin-right: 17px;
+    margin-bottom: 10px;
+}
+
+#btnSort{
+    width: 104px;
+}
+
+#tableHeader{
+    text-align: center;
+    font-size: 23px;
+    font-weight: bold;
+}
+
+.information{
+    font-size: large;
+    font-family: cursive;
+    text-align: center;
+    border: 2px solid #76848e36;
+    padding: 10px;
+    background-color: #77863d;
+    color: wheat;
+}
+
+.getByteControls{
+    margin-top: 10px;
+    font-size: large;
+    font-family: cursive;
+    text-align: center;
+    border: 2px solid red;
+    padding: 10px;
+    border-radius: 25px;
+    float: right;
+    width: 31%;
+    height: 34%;
+}
+
+#inpIndex{
+    margin-left: 10px;
+    margin-right: 10px;
+    width: 55px;
+}
+
+#btnAddBeginning, #btnAddEnd{
+    margin-top: 5px;
+}
+
+#findDataByte{
+    width: 100%;
+}
+
+.controlsData{
+    margin: 11px;
+    margin-bottom: -6px;
+    font-size: 19px;
+}
+
+.console{
+    border: 2px solid black;
+    padding: 10px;
+    display: inline-block;
+    height: 35%;
+    width: 69%;
+}
+.console label{
+    margin: 0 auto;
+    display: block;
+    font-size: 20px;
+    text-align: center;
+}
+
+.consoleContent{
+    overflow-y: scroll;
+    height:  210px;
+    margin-left: 21px;
+    margin-top: -16px;
+}

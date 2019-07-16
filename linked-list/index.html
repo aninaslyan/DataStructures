@@ -1,0 +1,95 @@
+<!doctype html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport"
+          content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Linked List</title>
+    <script src="https://code.jquery.com/jquery-3.4.1.min.js"
+            integrity="sha256-CSXorXvZcTkaix6Yvo6HppcZGetbYMGWSFlBw8HfCJo=" crossorigin="anonymous"></script>
+    <script src="scripts/linkedList.js"></script>
+    <script src="scripts/linkedListManager.js"></script>
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css"
+          integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+    <link rel="stylesheet" href="styles/style.css">
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+    <script>
+        $(document).ready(function () {
+            linkedListManager.init();
+        });
+    </script>
+</head>
+<body>
+<div>
+    <div class="controlsData">Controller</div>
+    <div id="leftControls">
+        <div>
+            <input id="inpValue" class="form-control" type="text" placeholder="Value" />
+            <button id="btnAddBeginning" type="button" class="btn btn-success">
+                Add
+                <span class="glyphicon glyphicon-menu-down"></span>
+            </button>
+            <button id="btnAddEnd" type="button" class="btn btn-success">
+                Add
+                <span class="glyphicon glyphicon-menu-up"></span>
+            </button>
+        </div>
+        <div style="display: contents">
+            <input id="inpIndex" class="form-control" type="number" placeholder="Index" value="1" min="1" />
+            <button id="btnAddByIndex" type="button" class="btn btn-success"><span
+                    class="glyphicon glyphicon-menu-left"></span> Add Index
+            </button>
+        </div>
+
+    </div>
+    <div id="rightControls">
+        <div>
+            <button id="btnSort" type="button" class="btn btn-primary">SORT <span
+                    class="glyphicon glyphicon-sort"></span>
+            </button>
+            <button id="btnRemoveList" type="button" class="btn btn-danger">Remove All</button>
+        </div>
+    </div>
+    <div id="content">
+        <div class="table-responsive tableFixHead">
+            <table class="table">
+                <thead>
+                <tr class="tableHeaderTr">
+                    <td colspan="3" id="tableHeader">Linked List Data</td>
+                </tr>
+                <tr>
+                    <th>Index</th>
+                    <th>Value</th>
+                    <th>Remove</th>
+                </tr>
+                </thead>
+                <tbody>
+                </tbody>
+            </table>
+        </div>
+        <div class="information">
+            <div id="dataSize">Size 0</div>
+            <div id="dataQuantity">Quantity 0</div>
+        </div>
+        <div class="console">
+            <label>Console</label>
+            <hr style="height:1px; border:none; color:#000; background-color:#000;">
+            <div>
+                <span class="consoleCursor  glyphicon glyphicon-console"></span>
+                <div class="consoleContent">
+
+                </div>
+            </div>
+        </div>
+        <div class="getByteControls"><label>Get Byte</label>
+            <input id="inpValueForByte" class="form-control" type="text" placeholder="Value" />
+            <button id="findDataByte" class="btn btn-primary" type="button">Get Byte</button>
+            <div id="dataSizeBytes">Size 0</div>
+        </div>
+
+    </div>
+</div>
+</body>
+</html>
