@@ -1,3 +1,4 @@
 # DataStructures
 
-Linked List
+- Stack
+- Linked List
