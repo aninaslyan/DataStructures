@@ -3,10 +3,8 @@ function Stack() {
     this.count = 0;
 }
 
-Stack.prototype.empty = function() {
-    if(this.count === 0) {
-        throw new Error('There is no element in the stack');
-    }
+Stack.prototype.isEmpty = function() {
+    return this.count === 0;
 };
 
 Stack.prototype.push = function(el) {
@@ -15,7 +13,9 @@ Stack.prototype.push = function(el) {
 };
 
 Stack.prototype.pop = function() {
-    Stack.prototype.empty();
+    if(Stack.prototype.isEmpty()) {
+        throw new Error('There is no element in the stack');
+    }
 
     let theLastElement = this.storage[this.count - 1];
     delete this.storage[this.count - 1];
@@ -24,7 +24,9 @@ Stack.prototype.pop = function() {
 };
 
 Stack.prototype.peek = function() {
-    Stack.prototype.empty();
+    if(Stack.prototype.isEmpty()) {
+        throw new Error('There is no element in the stack');
+    }
 
     return this.storage[this.count - 1];
 };
