@@ -1,4 +1,5 @@
 # DataStructures
 
-- Stack
 - Linked List
+- Stack
+- Queue

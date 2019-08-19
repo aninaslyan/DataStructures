@@ -8,12 +8,16 @@ Stack.prototype.isEmpty = function() {
 };
 
 Stack.prototype.push = function(el) {
+    if(!el) {
+        throw new Error('There is no element to add');
+    }
+
     this.storage[this.count] = el;
     this.count++;
 };
 
 Stack.prototype.pop = function() {
-    if(Stack.prototype.isEmpty()) {
+    if(this.isEmpty()) {
         throw new Error('There is no element in the stack');
     }
 
@@ -24,7 +28,7 @@ Stack.prototype.pop = function() {
 };
 
 Stack.prototype.peek = function() {
-    if(Stack.prototype.isEmpty()) {
+    if(this.isEmpty()) {
         throw new Error('There is no element in the stack');
     }
 
