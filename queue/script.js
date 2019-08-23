@@ -8,7 +8,7 @@ Queue.prototype.isEmpty = function () {
 };
 
 Queue.prototype.enqueue = function (el) {
-    if(!el) {
+    if (!el) {
         throw new Error('There is no element to add');
     }
 
@@ -16,8 +16,8 @@ Queue.prototype.enqueue = function (el) {
     this.count++;
 };
 
-Queue.prototype.dequeue = function() {
-    if(this.isEmpty()) {
+Queue.prototype.dequeue = function () {
+    if (this.isEmpty()) {
         throw new Error('There is no element in the queue');
     }
 
@@ -27,8 +27,8 @@ Queue.prototype.dequeue = function() {
     return theFirstElement;
 };
 
-Queue.prototype.front = function() {
-    if(this.isEmpty()) {
+Queue.prototype.front = function () {
+    if (this.isEmpty()) {
         throw new Error('There is no element in the queue');
     }
 

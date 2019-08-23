@@ -3,12 +3,12 @@ function Stack() {
     this.count = 0;
 }
 
-Stack.prototype.isEmpty = function() {
+Stack.prototype.isEmpty = function () {
     return this.count === 0;
 };
 
-Stack.prototype.push = function(el) {
-    if(!el) {
+Stack.prototype.push = function (el) {
+    if (!el) {
         throw new Error('There is no element to add');
     }
 
@@ -16,8 +16,8 @@ Stack.prototype.push = function(el) {
     this.count++;
 };
 
-Stack.prototype.pop = function() {
-    if(this.isEmpty()) {
+Stack.prototype.pop = function () {
+    if (this.isEmpty()) {
         throw new Error('There is no element in the stack');
     }
 
@@ -27,15 +27,15 @@ Stack.prototype.pop = function() {
     return theLastElement;
 };
 
-Stack.prototype.peek = function() {
-    if(this.isEmpty()) {
+Stack.prototype.peek = function () {
+    if (this.isEmpty()) {
         throw new Error('There is no element in the stack');
     }
 
     return this.storage[this.count - 1];
 };
 
-Stack.prototype.size = function() {
+Stack.prototype.size = function () {
     return this.count;
 };
 

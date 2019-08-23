@@ -1,28 +1,31 @@
 function Queue() {
-    this.stack1 = new Stack();
-    this.stack2 = new Stack(); // becomes a queue
+    this.input = new Stack();
+    this.output = new Stack();
+    this.count = 0;
 }
 
 Queue.prototype.enqueue = function (el) {
-    this.stack1.storage[this.stack1.count] = el;
-    this.stack1.count++;
+    this.input.push(el);
+    this.count++;
 };
 
-Queue.prototype.dequeue = function() {
-    if(this.stack1.isEmpty()) {
-        throw new Error('There is no element in the stack 1 to add to stack2');
+Queue.prototype.dequeue = function () {
+    if (this.input.isEmpty()) {
+        throw new Error('There is no element in input to add to output');
     }
 
-    let theFirstElement = this.stack1.storage[0];
-
-    while(!this.stack1.isEmpty()) {
-        this.stack2.storage[this.stack2.count] = this.stack1.storage[this.stack1.count - 1];
-        this.stack2.count++;
-        delete this.stack1.storage[this.stack1.count - 1];
-        this.stack1.count--;
+    while (!this.input.isEmpty()) {
+        this.output.push(this.input.pop());
     }
 
-    return theFirstElement;
+    let thePoppedElement = this.output.pop();
+    while (!this.output.isEmpty()) {
+        this.input.push(this.output.pop());
+    }
+
+    this.count--;
+
+    return thePoppedElement;
 };
 
 let queue = new Queue();
