@@ -157,8 +157,7 @@ class LinkedList {
         while (item) {
             if (!result) {
                 result = new Node(item.element);
-            }
-            else {
+            } else {
                 let isInserted = false;
                 let item2 = result;
                 while (item2) {
@@ -170,8 +169,7 @@ class LinkedList {
 
                         isInserted = true;
                         break;
-                    }
-                    else if (!item2.next) {
+                    } else if (!item2.next) {
                         item2.next = new Node(item.element);
                         break;
                     }
