@@ -5,6 +5,7 @@ function Node(element) {
 
 function LinkedList() {
     this.head = null;
+    this.size = 0;
 }
 
 LinkedList.prototype.insertAtEnd = function (value) {
@@ -20,6 +21,7 @@ LinkedList.prototype.insertAtEnd = function (value) {
         }
         currentNode.next = newNode;
     }
+    this.size++;
 };
 
 LinkedList.prototype.insertAtBeginning = function (value) {
@@ -33,6 +35,7 @@ LinkedList.prototype.insertAtBeginning = function (value) {
         this.head = newNode;
         this.head.next = currentNode;
     }
+    this.size++;
 };
 
 LinkedList.prototype.removeElement = function (value) {
@@ -47,12 +50,15 @@ LinkedList.prototype.removeElement = function (value) {
         if (currentNode.element === value) {
             if (previousNode !== null && currentNode.next !== null) {
                 previousNode.next = currentNode.next;
+                this.size--;
                 return currentNode;
             } else if (previousNode !== null && currentNode.next === null) {
                 previousNode.next = null;
+                this.size--;
                 return currentNode;
             } else {
                 this.head = currentNode.next;
+                this.size--;
                 return currentNode;
             }
         } else {
