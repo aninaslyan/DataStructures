@@ -6,3 +6,4 @@
 - Stack
 - Queue
   * Queue with two Stacks
+- Hash Table
