@@ -1,5 +1,5 @@
 function HashTable() {
-    this.storage = [];
+    this.storage = {};
     this.max = 17;
 }
 
@@ -11,31 +11,36 @@ HashTable.prototype.hash = function (value, max) {
     return hash % max;
 };
 
-HashTable.prototype.add = function (value, key) {
+HashTable.prototype.add = function (key, value) {
     let index = this.hash(value, this.max);
-    let arr = [key, value];
 
     if (!this.storage[index]) {
-        this.storage[index] = [arr];
+        this.storage[index] = {[key]: value};
+    } else if (Object.values(this.storage[index]).join('') === [value].join('')) {
+        return "can't add duplicate value";
     } else {
-        this.storage[index].push(arr)
+        this.storage[index][key] = value;
     }
+
+    return {key: value};
 };
 
 HashTable.prototype.get = function (value) {
     let index = this.hash(value, this.max);
-    for (let i = 0; i < this.storage[index].length; i++) {
-        if (this.storage[index][i][1] === value) {
-            return this.storage[index][i][0];
-        }
+    debugger;
+    if (this.storage[index]) {
+        return Object.keys(this.storage[index]).find(key => this.storage[index][key] === value);
     }
+    return "value doesn't exist in hash table";
 };
 
 HashTable.prototype.remove = function (value) {
     let index = this.hash(value, this.max);
+    let toBeRemoved;
+
     for (let i = 0; i < this.storage[index].length; i++) {
         if (this.storage[index][i][1] === value) {
-            var toBeRemoved = this.storage[index][i];
+            toBeRemoved = this.storage[index][i];
             this.storage[index].splice(i, 1);
         }
     }
