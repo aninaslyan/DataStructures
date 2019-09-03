@@ -22,12 +22,12 @@ HashTable.prototype.add = function (key, value) {
         this.storage[index][key] = value;
     }
 
-    return {key: value};
+    return {[key]: value};
 };
 
 HashTable.prototype.get = function (value) {
     let index = this.hash(value, this.max);
-    debugger;
+
     if (this.storage[index]) {
         return Object.keys(this.storage[index]).find(key => this.storage[index][key] === value);
     }
@@ -36,15 +36,15 @@ HashTable.prototype.get = function (value) {
 
 HashTable.prototype.remove = function (value) {
     let index = this.hash(value, this.max);
-    let toBeRemoved;
+    let indexToRemove;
 
-    for (let i = 0; i < this.storage[index].length; i++) {
-        if (this.storage[index][i][1] === value) {
-            toBeRemoved = this.storage[index][i];
-            this.storage[index].splice(i, 1);
-        }
+    if (this.storage[index]) {
+        indexToRemove = Object.keys(this.storage[index]).find(key => this.storage[index][key] === value);
+        delete hashTable.storage[index][indexToRemove];
+        return indexToRemove;
+    } else {
+        return "value doesn't exist in hash table";
     }
-    return toBeRemoved;
 };
 
 let hashTable = new HashTable();
